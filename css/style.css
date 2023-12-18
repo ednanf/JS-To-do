@@ -92,6 +92,10 @@ select {
 	width: 90%;
 }
 
+#input-edit {
+	width: 100%;
+}
+
 .form-control {
 	display: flex;
 }
@@ -170,4 +174,36 @@ select {
 	/* color: #fff; */
 	text-decoration: line-through;
 	font-style: italic;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Mobile >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (max-width: 450px) {
+	.todo-container {
+		max-width: 93%;
+	}
+
+	#toolbar {
+		flex-direction: column;
+	}
+
+	#search {
+		border-right: none;
+		padding-right: 0;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 1rem;
+		width: 100%;
+	}
+
+	#search input {
+		width: 90%;
+	}
+
+	#button-erase {
+		margin-right: 0;
+	}
+
+	#filter {
+		margin-top: 1rem;
+		width: 100%;
+	}
 }
