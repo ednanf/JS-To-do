@@ -81,6 +81,7 @@ clearSearchBtn.addEventListener('click', (e) => {
 
 // Functions
 const saveTodo = (text) => {
+	// Generate a new todo div and its elements
 	const todo = document.createElement('div');
 	todo.classList.add('todo');
 
@@ -105,6 +106,7 @@ const saveTodo = (text) => {
 
 	todoList.appendChild(todo);
 
+	// Clear input for a new to-do
 	todoInput.value = '';
 	todoInput.focus();
 };
