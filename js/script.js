@@ -69,7 +69,7 @@ editForm.addEventListener('submit', (e) => {
 });
 
 searchInput.addEventListener('keyup', (e) => {
-	const query = e.target.value;
+	const query = e.target.value.toLowerCase();
 	searchTodos(query);
 });
 
@@ -131,7 +131,7 @@ const searchTodos = (query) => {
 	const todos = document.querySelectorAll('.todo');
 
 	todos.forEach((todo) => {
-		let todoTitle = todo.querySelector('h3').innerText;
+		let todoTitle = todo.querySelector('h3').innerText.toLowerCase();
 
 		todo.style.display = 'flex';
 

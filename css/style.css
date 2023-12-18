@@ -88,6 +88,10 @@ select {
 	font-weight: bold;
 }
 
+#input-todo {
+	width: 90%;
+}
+
 .form-control {
 	display: flex;
 }
