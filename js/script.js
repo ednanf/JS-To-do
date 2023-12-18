@@ -88,7 +88,7 @@ filterSelector.addEventListener('change', (e) => {
 });
 
 // Functions
-const saveTodo = (text) => {
+const saveTodo = (text, done = 0, save = 1) => {
 	// Generate a new todo div and its elements
 	const todo = document.createElement('div');
 	todo.classList.add('todo');
@@ -111,6 +111,15 @@ const saveTodo = (text) => {
 	deleteBtn.classList.add('button-delete-todo');
 	deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 	todo.appendChild(deleteBtn);
+
+	// Localstorage data
+	if (done) {
+		todo.classList.add('done');
+	}
+
+	if (save) {
+		saveTodoLocalStorage({ text: text, done: 0 });
+	}
 
 	todoList.appendChild(todo);
 
@@ -175,4 +184,21 @@ const filterTodos = (filterValue) => {
 		default:
 			break;
 	}
+};
+
+// Local storage
+const getTodosLocalStorage = () => {
+	// It will be either JSON or an empty array
+	const todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+	return todos;
+};
+
+const saveTodoLocalStorage = (todo) => {
+	const todos = getTodosLocalStorage();
+
+	// Insert new todo into the array
+	todos.push(todo);
+
+	localStorage.setItem('todos', JSON.stringify(todos));
 };
