@@ -7,15 +7,18 @@
 	box-sizing: border-box;
 }
 
+/* html {
+	height: 100vh;
+} */
+
 body {
 	background-image: url(../img/bg.jpg);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	/* min-height: 100vh; */
 }
 
 button {
