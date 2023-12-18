@@ -48,6 +48,8 @@ document.addEventListener('click', (e) => {
 		editInput.value = todoTitle;
 		oldInputValue = todoTitle;
 	}
+
+	filterSelector.dispatchEvent(new Event('change'));
 });
 
 cancelEditBtn.addEventListener('click', (e) => {
