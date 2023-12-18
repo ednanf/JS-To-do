@@ -40,6 +40,7 @@ document.addEventListener('click', (e) => {
 
 	if (targetElement.classList.contains('button-delete-todo')) {
 		parentElement.remove();
+		removeTodLocalStorage(todoTitle);
 	}
 
 	if (targetElement.classList.contains('button-edit-todo')) {
@@ -190,15 +191,27 @@ const filterTodos = (filterValue) => {
 const getTodosLocalStorage = () => {
 	// It will be either JSON or an empty array
 	const todos = JSON.parse(localStorage.getItem('todos')) || [];
-
 	return todos;
 };
 
 const saveTodoLocalStorage = (todo) => {
 	const todos = getTodosLocalStorage();
-
 	// Insert new todo into the array
 	todos.push(todo);
-
 	localStorage.setItem('todos', JSON.stringify(todos));
 };
+
+const loadTodos = () => {
+	const todos = getTodosLocalStorage();
+	todos.forEach((todo) => {
+		saveTodo(todo.text, todo.done, 0);
+	});
+};
+
+const removeTodLocalStorage = (todoText) => {
+	const todos = getTodosLocalStorage();
+	const filteredTodos = todos.filter((todo) => todo.text !== todoText);
+	localStorage.setItem('todos', JSON.stringify(filteredTodos));
+};
+
+loadTodos();
