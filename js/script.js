@@ -73,6 +73,12 @@ searchInput.addEventListener('keyup', (e) => {
 	searchTodos(query);
 });
 
+clearSearchBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+	searchInput.value = '';
+	searchInput.dispatchEvent(new Event('keyup')); // triggers the searchInput event
+});
+
 // Functions
 const saveTodo = (text) => {
 	const todo = document.createElement('div');
@@ -121,4 +127,16 @@ const toggleForms = () => {
 	todoList.classList.toggle('hide');
 };
 
-const searchTodos = (query) => {};
+const searchTodos = (query) => {
+	const todos = document.querySelectorAll('.todo');
+
+	todos.forEach((todo) => {
+		let todoTitle = todo.querySelector('h3').innerText;
+
+		todo.style.display = 'flex';
+
+		if (!todoTitle.includes(query)) {
+			todo.style.display = 'none';
+		}
+	});
+};
