@@ -176,18 +176,19 @@ select {
 }
 
 footer {
-	font-size: 50px;
+	font-size: 30px;
+	text-align: center;
 	position: fixed;
-	right: 0;
+	left: 0;
 	top: 93vh;
 	background-color: #fdfdfd;
 	background-image: url(../img/label-bg.png);
-	background-size: 100px;
+	background-size: 80px;
 	padding: 0.5rem;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	border-top: 1px dashed #bb3e03;
-	border-left: 1px dashed #bb3e03;
+	border-right: 1px dashed #bb3e03;
 	border-bottom: 1px dashed #bb3e03;
 	box-shadow: 0px 0px 0px 3px rgba(234, 234, 234, 1);
 }
@@ -196,7 +197,7 @@ footer {
 @media (max-width: 450px) {
 	.todo-container {
 		max-width: 93%;
-		margin-top: 10px;
+		margin-top: 30px;
 	}
 
 	#toolbar {
@@ -225,8 +226,11 @@ footer {
 	}
 }
 
-/* @media (max-width: 610px) {
+@media (max-width: 610px) {
 	footer {
-		position: relative;
+		position: inherit;
+		width: 50px;
+		text-align: center;
+		margin-bottom: 10px;
 	}
-} */
+}
