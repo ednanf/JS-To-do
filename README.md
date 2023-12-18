@@ -2,7 +2,7 @@
 
 ## Live demo
 
-[Click here](about:blank)
+[Access here!](about:blank)
 
 ## About
 
@@ -10,4 +10,6 @@ Simple to-do web application with local storage support.
 
 ## Credits
 
-- Photo by [Johannes Plenio](https://unsplash.com/photos/forest-heat-by-sunbeam-RwHv7LgeC7s) on [Unsplash](https://unsplash.com/).
+- Background: Photo by [Johannes Plenio](https://unsplash.com/photos/forest-heat-by-sunbeam-RwHv7LgeC7s) on [Unsplash](https://unsplash.com/)
+- Icons: [Font Awesome](https://fontawesome.com/)
+- Font: Montserrat at [Google Fonts](https://fonts.google.com/specimen/Montserrat)
