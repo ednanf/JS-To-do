@@ -79,6 +79,12 @@ clearSearchBtn.addEventListener('click', (e) => {
 	searchInput.dispatchEvent(new Event('keyup')); // triggers the searchInput event
 });
 
+filterSelector.addEventListener('change', (e) => {
+	const filterValue = e.target.value;
+
+	filterTodos(filterValue);
+});
+
 // Functions
 const saveTodo = (text) => {
 	// Generate a new todo div and its elements
@@ -141,4 +147,30 @@ const searchTodos = (query) => {
 			todo.style.display = 'none';
 		}
 	});
+};
+
+const filterTodos = (filterValue) => {
+	const todos = document.querySelectorAll('.todo');
+
+	switch (filterValue) {
+		case 'all':
+			todos.forEach((todo) => (todo.style.display = 'flex'));
+			break;
+		case 'done':
+			todos.forEach((todo) =>
+				todo.classList.contains('done')
+					? (todo.style.display = 'flex')
+					: (todo.style.display = 'none')
+			);
+			break;
+		case 'active':
+			todos.forEach((todo) =>
+				!todo.classList.contains('done')
+					? (todo.style.display = 'flex')
+					: (todo.style.display = 'none')
+			);
+			break;
+		default:
+			break;
+	}
 };
