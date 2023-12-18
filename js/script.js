@@ -200,7 +200,7 @@ const saveTodoLocalStorage = (todo) => {
 	const todos = getTodosLocalStorage();
 	// Insert new todo into the array
 	todos.push(todo);
-	localStorage.setItem('todos', JSON.stringify(todos));
+	insertInLocalStorage(todos);
 };
 
 const loadTodos = () => {
@@ -213,7 +213,7 @@ const loadTodos = () => {
 const removeTodLocalStorage = (todoText) => {
 	const todos = getTodosLocalStorage();
 	const filteredTodos = todos.filter((todo) => todo.text !== todoText);
-	localStorage.setItem('todos', JSON.stringify(filteredTodos));
+	insertInLocalStorage(filteredTodos);
 };
 
 const updateTodoStatusLocalStorage = (todoText) => {
@@ -221,7 +221,7 @@ const updateTodoStatusLocalStorage = (todoText) => {
 	todos.map((todo) =>
 		todo.text === todoText ? (todo.done = !todo.done) : null
 	);
-	localStorage.setItem('todos', JSON.stringify(todos));
+	insertInLocalStorage(todos);
 };
 
 const updateTodoLocalStorage = (todoOldText, todoNewText) => {
@@ -229,7 +229,11 @@ const updateTodoLocalStorage = (todoOldText, todoNewText) => {
 	todos.map((todo) =>
 		todo.text === todoOldText ? (todo.text = todoNewText) : null
 	);
-	localStorage.setItem('todos', JSON.stringify(todos));
+	insertInLocalStorage(todos);
+};
+
+const insertInLocalStorage = (todosToStringify) => {
+	localStorage.setItem('todos', JSON.stringify(todosToStringify));
 };
 
 loadTodos();
