@@ -7,10 +7,6 @@
 	box-sizing: border-box;
 }
 
-/* html {
-	height: 100vh;
-} */
-
 body {
 	background-image: url(../img/bg.jpg);
 	background-position: center;
@@ -20,8 +16,14 @@ body {
 	justify-content: center;
 }
 
+input {
+	height: 40px;
+}
+
 button {
 	background-color: #fdfdfd;
+	height: 40px;
+	width: 40px;
 	color: #bb3e03;
 	border: 2px solid #bb3e03;
 	padding: 0.3rem 0.6rem;
