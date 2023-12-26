@@ -15,4 +15,4 @@ Simple to-do web application with local storage support.
 
 - Background: Photo by [Johannes Plenio](https://unsplash.com/photos/forest-heat-by-sunbeam-RwHv7LgeC7s) on [Unsplash](https://unsplash.com/)
 - Icons: [Font Awesome](https://fontawesome.com/)
-- Font: Montserrat on [Google Fonts](https://fonts.google.com/specimen/Montserrat)
+- Font: Montserrat by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, and Jacques Le Bailly on [Google Fonts](https://fonts.google.com/specimen/Montserrat)
